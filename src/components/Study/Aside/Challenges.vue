@@ -1,25 +1,25 @@
 <template>
-  <div class="my-12">
-    <div class="flex flex-row justify-between items-center mb-5">
-      <h1 class="text-gray-800 text-base font-bold">Challenges</h1>
+  <div class="my-4">
+    <div class="flex flex-row justify-between items-center mb-2">
+      <h1 class="text-gray-500 text-sm font-bold">Challenges</h1>
 
       <view-all route="/test" />
     </div>
 
-    <div class="flex flex-col mt-3 text-sm text-dark_gray gap-2">
+    <div class="flex flex-col mt-1 text-xs text-dark_gray gap-2">
       <div
         v-for="eachChallenge in allChallenges"
         :key="eachChallenge.title"
-        class="p-3 mb-1 rounded-lg w-full bg-gray-100 items-center"
+        class="p-2 mb-1 rounded-lg w-full bg-gray-100 items-center"
       >
-        <div class="mb-2 block text-lg items-start">
+        <div class="mb-1 block text-xs items-start">
           <span>{{ eachChallenge.title }}</span>
-          <strong>{{ eachChallenge.subject }}</strong>
+          <strong class="ml-2">{{ eachChallenge.subject }}</strong>
         </div>
 
-        <div class="w-full bg-gray-400 h-2 rounded-xl">
+        <div class="w-full bg-gray-400 rounded-lg h-1">
           <div
-            class="bg-blue-600 h-2"
+            class="bg-blue-600 rounded-lg h-1"
             :style="`width: ${eachChallenge.ranking}%;`"
           ></div>
         </div>
@@ -32,10 +32,9 @@
 import ViewAll from '@/components/Reusable/ViewAll.vue'
 
 export default {
-  name: 'challennges',
+  name: 'Challennges',
   components: { ViewAll },
   data: () => ({
-    message: 'Test Ratings',
     allChallenges: [
       {
         title: 'Reach the rank of',

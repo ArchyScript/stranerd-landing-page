@@ -2,22 +2,21 @@
   <div>
     <div
       v-if="coin_position == 'right'"
-      :class="`flex items-center justify-center py-2 px-3 ${bg_color} border border-gray-200 rounded-xl`"
+      :class="`flex items-center justify-center px-2 ${bg_color} border border-gray-200 rounded-xl`"
     >
-      <span :class="`pr-3 ${text_color} font-bold text-xl`">
+      <span :class="`pr-3 ${text_color} font-bold text-sm`">
         {{ value }}
-        <!-- ${coin_type == 'gold' ? 'orange' : 'text-blue-500'} -->
       </span>
       <i :class="`fas fa-coins ${coin_type}`"></i>
     </div>
 
     <div
       v-if="coin_position == 'left'"
-      :class="`flex items-center justify-center py-2 px-3 ${bg_color} border border-gray-200 rounded-xl`"
+      :class="`flex items-center justify-center px-2 ${bg_color} border border-gray-200 rounded-xl`"
     >
-      <i :class="`fas fa-coins ${coin_type} pr-3`"></i>
+      <i :class="`fas fa-coins ${coin_type} pr-2`"></i>
 
-      <span :class="`${text_color} font-bold text-xl`">
+      <span :class="`${text_color} font-bold text-sm`">
         {{ value }}
         <!-- ${coin_type == 'gold' ? 'orange' : 'text-blue-500'} -->
       </span>
@@ -46,6 +45,6 @@ export default {
   color: #cd7f32;
 }
 .fas {
-  font-size: 1.4rem;
+  font-size: 0.6rem;
 }
 </style>

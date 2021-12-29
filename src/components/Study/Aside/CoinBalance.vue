@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-between items-center p-1 text-sm bg-gray-200 rounded-xl"
+    class="flex justify-between items-center p-2 text-sm bg-gray-200 rounded-xl"
   >
     <Coins
       value="10k"
@@ -9,7 +9,7 @@
       coin_type="bronze"
     />
 
-    <span><i class="fa fa-plus fa-2x text-slate-300"></i></span>
+    <span><i class="fa fa-plus text-slate-300"></i></span>
 
     <Coins
       value="250"
@@ -25,9 +25,7 @@ import Coins from '@/components/Reusable/Coins.vue'
 
 export default {
   name: 'CoinBalance',
-  data: () => ({
-    message: 'Test Challenges',
-  }),
+  data: () => ({}),
   components: {
     Coins,
   },
