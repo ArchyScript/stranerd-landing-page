@@ -1,10 +1,10 @@
 <template>
   <div
-    :class="`flex items-center justify-center p-2 ${bg_color} border border-gray-200 rounded`"
+    :class="`flex items-center justify-center p-1 ${bg_color} border border-gray-200 rounded`"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="h-10 w-10 pr-2"
+      class="h-6 w-6 pr-1"
       viewBox="0 0 20 20"
       fill="currentColor"
     >
@@ -14,10 +14,9 @@
       <path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2V5h8a2 2 0 00-2-2H5z" />
     </svg>
 
-    <span :class="`pr-2 ${text_color} font-bold`">
-      {{ value }}
+    <span :class="`pr-2 ${text_color} font-semibold text-xs`">
+      {{ value }} cards
     </span>
-    cards
   </div>
 </template>
 

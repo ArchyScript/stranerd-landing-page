@@ -2,7 +2,7 @@
   <div>
     <div
       v-if="coin_position == 'right'"
-      :class="`flex items-center justify-center px-2 ${bg_color} border border-gray-200 rounded-xl`"
+      :class="`flex items-center justify-center px-2 py-1 ${bg_color} border border-gray-200 rounded-lg`"
     >
       <span :class="`pr-3 ${text_color} font-bold text-sm`">
         {{ value }}
@@ -12,7 +12,7 @@
 
     <div
       v-if="coin_position == 'left'"
-      :class="`flex items-center justify-center px-2 ${bg_color} border border-gray-200 rounded-xl`"
+      :class="`flex items-center justify-center px-2 py-1 ${bg_color} border border-gray-200 rounded-lg`"
     >
       <i :class="`fas fa-coins ${coin_type} pr-2`"></i>
 

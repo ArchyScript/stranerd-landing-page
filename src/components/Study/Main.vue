@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-12 gap-8 my-8 mx-8">
     <div class="col-span-9">
-      <TopBar />
+      <!-- <TopBar /> -->
       <MyStudy />
       <StudyTools />
       <TestPrep />
@@ -21,7 +21,7 @@
 
 <script type="js">
 // Main Page
-import TopBar from "./MainPage/TopBar"
+// import TopBar from "./MainPage/TopBar"
 import MyStudy from "./MainPage/MyStudy"
 import StudyTools from "./MainPage/StudyTools"
 import TestPrep from "./MainPage/TestPrep"
@@ -39,7 +39,7 @@ export default {
   data: () => ({}),
   components: {
     MyStudy,
-    TopBar,
+    // TopBar,
     StudyTools,
     TestPrep,
     Flashcards,
