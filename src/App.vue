@@ -1,12 +1,20 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Layout />
   </div>
 </template>
+
+<script lang="js">
+import Layout from "@/components/Layout.vue";
+
+export default {
+  name: "App",
+
+  components: {
+    Layout,
+  }
+};
+</script>
 
 <style>
 #app {
