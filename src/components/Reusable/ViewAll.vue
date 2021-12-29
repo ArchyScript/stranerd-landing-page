@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
 .fas {
   font-size: 0.6rem;
 }
