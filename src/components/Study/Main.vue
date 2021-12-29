@@ -16,46 +16,7 @@
       <Challenges />
       <Ranking />
     </div>
-    <!-- <ion-grid>
-      <ion-row>
-        <ion-col size="2"></ion-col>
-
-        <ion-col size="8">
-          <TopBar />
-          <MyStudy />
-          <StudyTools />
-          <TestPrep />
-          <Flashcards />
-          <Notes />
-          <Videos />
-          <StudySets />
-        </ion-col>
-
-        <ion-col size="2">
-          <CoinBalance />
-          <Challenges />
-          <Ranking />
-        </ion-col>
-      </ion-row>
-    </ion-grid> -->
   </div>
-  <!-- <ion-list>
-      <ion-item>
-        <ion-checkbox slot="start"></ion-checkbox>
-        <ion-label>
-          <h1>Create Idea</h1>
-          <ion-note>Run Idea by Brandy</ion-note>
-        </ion-label>
-        <ion-badge 1color="success" slot="end">5 Days</ion-badge>
-      </ion-item>
-    </ion-list>
-    <ion-spacer />
-
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button>
-        <ion-icon name="add" />
-      </ion-fab-button>
-    </ion-fab -->
 </template>
 
 <script type="js">
@@ -72,14 +33,6 @@ import StudySets from "./MainPage/StudySets"
 import CoinBalance from "./Aside/CoinBalance"
 import Challenges from "./Aside/Challenges"
 import Ranking from "./Aside/Ranking"
-// ionic icons
-import { add } from 'ionicons/icons'
-import { addIcons } from 'ionicons'
-
-addIcons({
-  'ios-add': add.ios,
-  'md-add': add.md,
-})
 
 export default {
   name: 'MainPage',

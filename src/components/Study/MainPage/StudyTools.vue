@@ -3,7 +3,7 @@
     <div class="flex justify-between align-center mb-3">
       <h1 class="font-semibold text-lg font-sans">Study Tools</h1>
 
-      <CardSlider />
+      <!-- <CardSlider /> -->
 
       <ViewAll route="/study" />
     </div>
@@ -47,18 +47,14 @@
 </template>
 
 <script>
-// import Ratings from '@/components/Reusable/Ratings.vue'
 import ViewAll from '@/components/Reusable/ViewAll.vue'
-import CardSlider from '@/components/Reusable/CardSlider.vue'
-// import User from '@/components/Reusable/User.vue'
+// import CardSlider from '@/components/Reusable/CardSlider.vue'
 
 export default {
   name: 'MyStudy',
   components: {
-    // Ratings,
     ViewAll,
-    CardSlider,
-    // User,
+    // CardSlider,
   },
   data: () => ({
     studyTools: [

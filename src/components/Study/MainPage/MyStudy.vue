@@ -3,7 +3,7 @@
     <div class="flex justify-between align-center mb-3">
       <h1 class="font-semibold text-lg font-sans">My Study</h1>
 
-      <CardSlider />
+      <!-- <CardSlider /> -->
 
       <ViewAll route="/study" />
     </div>
@@ -40,7 +40,7 @@
 <script>
 import Ratings from '@/components/Reusable/Ratings.vue'
 import ViewAll from '@/components/Reusable/ViewAll.vue'
-import CardSlider from '@/components/Reusable/CardSlider.vue'
+// import CardSlider from '@/components/Reusable/CardSlider.vue'
 import User from '@/components/Reusable/User.vue'
 
 export default {
@@ -48,7 +48,7 @@ export default {
   components: {
     Ratings,
     ViewAll,
-    CardSlider,
+    // CardSlider,
     User,
   },
   data: () => ({

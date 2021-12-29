@@ -25,13 +25,12 @@
 export default {
   name: 'HomePage',
   data: () => ({
-    selectedItem: 0,
     allSidebarListAndRoutes: [
       {
         title: 'Home',
         icon: 'fa fa-home',
         route: '/',
-        active: false,
+        active: true,
       },
       {
         title: 'Questions',
@@ -55,7 +54,7 @@ export default {
         title: 'Schedules',
         icon: 'fa fa-calendar',
         route: '/schedules',
-        active: true,
+        active: false,
       },
       {
         title: 'Wallet',
