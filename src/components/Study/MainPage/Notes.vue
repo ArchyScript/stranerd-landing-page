@@ -15,32 +15,34 @@
         <div
           class="w-full h-32 rounded-3xl bg-indigo-400 flex justify-center items-center"
         >
-          <span class="font-bold font-sans text-4xl">PREVIEW</span>
+          <span class="font-bold font-sans text-3xl">PREVIEW</span>
         </div>
 
-        <div class="flex justify-between items-center m-2">
-          <div>
-            <span class="font-bold text-sm font-sans">
-              {{ note.subject }} -
-            </span>
+        <div class="p-3">
+          <div class="flex justify-between items-center mb-2">
+            <div>
+              <span class="font-bold text-sm font-sans">
+                {{ note.subject }} -
+              </span>
 
-            <span class="font-medium text-sm font-sans">
-              {{ note.title }}
-            </span>
+              <span class="font-medium text-xs font-sans">
+                {{ note.title }}
+              </span>
+            </div>
+
+            <Coins
+              v-if="note.coin.is_available"
+              :value="note.coin.value"
+              :coin_type="note.coin.coin_type"
+              coin_position="right"
+            />
           </div>
 
-          <Coins
-            v-if="note.coin.is_available"
-            :value="note.coin.value"
-            :coin_type="note.coin.coin_type"
-            coin_position="right"
-          />
-        </div>
+          <div class="flex justify-between items-center mt-1">
+            <Ratings :value="note.rating" />
 
-        <div class="flex justify-between items-center m-2">
-          <Ratings :value="note.rating" />
-
-          <User :name="note.user.name" />
+            <User :name="note.user.name" />
+          </div>
         </div>
       </div>
     </div>

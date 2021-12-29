@@ -1,33 +1,122 @@
 <template>
-  <ion-grid>
-    <ion-row>
-      <ion-col size="9">
-        videos ion-col 9
-      </ion-col>
+  <div class="mt-8">
+    <div class="flex justify-between align-center mb-3">
+      <h1 class="font-semibold text-lg font-sans">Videos</h1>
 
-      <ion-col size="3">
-        ion-col 3
-        <span class="underline">Test me</span>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      <ViewAll route="/study" />
+    </div>
+
+    <div class="grid grid-cols-3 gap-6">
+      <div
+        v-for="video in videos"
+        :key="video"
+        class="flex flex-col border border-gray-200 rounded-3xl bg-blue-50"
+      >
+        <div
+          class="w-full h-36 rounded-3xl bg-indigo-400 flex justify-center items-center"
+        >
+          <iframe class="h-full w-full rounded-3xl" :src="video.src"></iframe>
+          <!--
+            src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"
+          
+          <video class="h-full w-full rounded-3xl" controls>
+            <source
+              src="https://www.youtube.com/watch?v=aN1a_J33P0E"
+              type="video/mp4"
+            />
+          </video>
+          -->
+        </div>
+
+        <div class="p-3">
+          <div class="flex justify-between items-center mb-2">
+            <div>
+              <span class="font-bold text-sm font-sans">
+                {{ video.subject }} -
+              </span>
+
+              <span class="font-medium text-xs font-sans">
+                {{ video.title }}
+              </span>
+            </div>
+
+            <Coins
+              v-if="video.coin.is_available"
+              :value="video.coin.value"
+              :coin_type="video.coin.coin_type"
+              coin_position="right"
+            />
+          </div>
+
+          <div class="flex justify-between items-center mt-1">
+            <Ratings :value="video.rating" />
+
+            <User :name="video.user.name" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-// import { add } from "ionicons/icons";
-// import { addIcons } from "ionicons";
-
-// addIcons({
-//   "ios-add": add.ios,
-//   "md-add": add.md
-// });
+import Ratings from '@/components/Reusable/Ratings.vue'
+import Coins from '@/components/Reusable/Coins.vue'
+import User from '@/components/Reusable/User.vue'
+import ViewAll from '@/components/Reusable/ViewAll.vue'
 
 export default {
-  name: 'Videos',
+  name: 'MyStudy',
+  components: {
+    Ratings,
+    Coins,
+    User,
+    ViewAll,
+  },
   data: () => ({
-    message: 'Test Message',
+    videos: [
+      {
+        subject: 'Physics',
+        title: 'Introduction to Work., Energy and Power',
+        user: { name: 'Daniel' },
+        src: 'https://www.youtube.com/watch?v=mf2rvZ7Uv4s',
+        coin: {
+          is_available: false,
+          value: 46,
+          coin_type: 'gold',
+          position: 'right',
+        },
+        rating: 4,
+      },
+      {
+        subject: 'Chemistry',
+        title: 'This is a brieft description of chemistry',
+        user: { name: 'ArchyScript' },
+        src: 'https://www.youtube.com/watch?v=aN1a_J33P0E',
+        coin: {
+          is_available: true,
+          value: 55,
+          coin_type: 'gold',
+          position: 'right',
+        },
+        rating: 3,
+      },
+      {
+        subject: 'Geography',
+        title: 'Nuclear Physic for first year College student',
+        user: { name: 'Derin' },
+        src: 'https://www.youtube.com/watch?v=8t13uQYHeX4',
+        coin: {
+          is_available: true,
+          value: 87,
+          coin_type: 'gold',
+          position: 'right',
+        },
+        rating: 3,
+      },
+    ],
   }),
 }
 </script>
 
-<style scoped></style>
+<style scope></style>

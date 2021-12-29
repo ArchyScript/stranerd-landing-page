@@ -15,7 +15,9 @@
         class="border border-gray-200 rounded-3xl bg-blue-50 p-3"
       >
         <div class="flex m-2">
-          <div class="h-16 w-16 rounded bg-red-200 mr-1"></div>
+          <div class="h-16 w-16 rounded bg-red-200 mr-1">
+            
+          </div>
 
           <div class="flex-1 ml-2 align-center">
             <div class="block flex-start font-semibold text-xs">

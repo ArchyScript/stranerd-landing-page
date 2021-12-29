@@ -1,79 +1,36 @@
 <template>
   <div class="mt-10">
     <div class="flex justify-between align-center mb-3">
-      <h1 class="bold">My Study</h1>
+      <h1 class="font-semibold text-lg font-sans">Study Sets</h1>
 
-      <div class="flex justify-center align-center">
-        <span class="fa fa-chevron-left mx-1 outline"></span>
-        ...
-        <span class="fa fa-chevron-right mx-1 outline"></span>
-      </div>
+      <!-- <CardSlider /> -->
 
-      <div class="flex justify-center align-center">
-        <span class="to-blue-600 self-center mr-2">view all</span>
-        <span class="fa fa-chevron-right mx-1 outline"></span>
-      </div>
+      <ViewAll route="/study" />
     </div>
 
-    <div class="grid grid-cols-3 gap-6">
-      <div class="rounded bg-blue-50 outline-double p-4">
-        <div class="flex justify-around m-2">
-          <div class="h-20 w-20 rounded bg-red-200 mr-1"></div>
-          <div class="mx-2 align-center">
-            <div class="block self-start font-bold">Work and Energy</div>
-            <div class="block self-start">
-              Introduction to University Physics
+    <div class="grid grid-cols-3 gap-3">
+      <div
+        v-for="studySet in studySets"
+        :key="studySet"
+        class="border border-gray-200 rounded-3xl bg-blue-50 p-3"
+      >
+        <div class="flex m-2">
+          <div class="h-16 w-16 rounded bg-red-200 mr-1"></div>
+
+          <div class="flex-1 ml-2 align-center">
+            <div class="block flex-start font-semibold text-xs">
+              {{ studySet.topic }}
+            </div>
+            <div class="block text-xs font-medium">
+              {{ studySet.sub_topic }}
             </div>
           </div>
         </div>
 
         <div class="flex justify-between m-2 mt-4">
-          <Ratings value="3" />
+          <Ratings :value="studySet.rating" />
 
-          <div class="flex justify-center align-center">
-            <span>Timmy</span>
-            <span class="fa fa-user-circle mx-1 outline"></span>
-          </div>
-        </div>
-      </div>
-      <div class="rounded bg-blue-50 outline-double p-4">
-        <div class="flex justify-around m-2">
-          <div class="h-20 w-20 rounded bg-red-200 mr-1"></div>
-          <div class="mx-2 align-center">
-            <div class="block self-start font-bold">Work and Energy</div>
-            <div class="block self-start">
-              Introduction to University Physics
-            </div>
-          </div>
-        </div>
-
-        <div class="flex justify-between m-2 mt-4 border-2">
-          <Ratings value="4" />
-
-          <div class="flex justify-center align-center">
-            <span>Timmy</span>
-            <span class="fa fa-user mx-1 outline"></span>
-          </div>
-        </div>
-      </div>
-      <div class="rounded bg-blue-50 outline-double p-4">
-        <div class="flex justify-around m-2">
-          <div class="h-20 w-20 rounded bg-red-200 mr-1"></div>
-          <div class="mx-2 align-center">
-            <div class="block self-start font-bold">Work and Energy</div>
-            <div class="block self-start">
-              Introduction to University Physics
-            </div>
-          </div>
-        </div>
-
-        <div class="flex justify-between m-2 mt-4">
-          <Ratings value="4" />
-
-          <div class="flex justify-center align-center">
-            <span>Timmy</span>
-            <span class="fa fa-user mx-1 outline"></span>
-          </div>
+          <User :name="studySet.name" />
         </div>
       </div>
     </div>
@@ -82,14 +39,42 @@
 
 <script>
 import Ratings from '@/components/Reusable/Ratings.vue'
+import ViewAll from '@/components/Reusable/ViewAll.vue'
+// import CardSlider from '@/components/Reusable/CardSlider.vue'
+import User from '@/components/Reusable/User.vue'
 
 export default {
   name: 'MyStudy',
   components: {
     Ratings,
+    ViewAll,
+    // CardSlider,
+    User,
   },
   data: () => ({
-    message: "Test Message testing meddious'jd'hc'dv;avha ifbfieeorerrerherhe",
+    studySets: [
+      {
+        topic: 'Work and Energy',
+        sub_topic: 'Introduction to Work., Energy and Power',
+        name: 'Daniel',
+        subject: 'Physics',
+        rating: 4,
+      },
+      {
+        topic: 'Electrolysis',
+        sub_topic: 'This is a brieft description of electrolysis in chemistry',
+        name: 'Timmy',
+        subject: 'Chemistry',
+        rating: 3,
+      },
+      {
+        topic: 'Nuclear Physics',
+        sub_topic: 'Nuclear Physic for first year College student',
+        name: 'Derin',
+        subject: 'Physics',
+        rating: 3,
+      },
+    ],
   }),
 }
 </script>
