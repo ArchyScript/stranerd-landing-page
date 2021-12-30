@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar text-black py-6">
+  <div class="w-56 text-black py-6">
     <div class="mt-4 mb-6 flex justify-center items-center">
       <img src="@/assets/stranerd_logo.svg" alt="stranerd logo" class="h-5" />
     </div>

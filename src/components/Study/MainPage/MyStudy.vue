@@ -1,9 +1,9 @@
 <template>
-  <div class="mt-10">
-    <div class="flex justify-between align-center mb-3">
-      <h1 class="font-semibold text-lg font-sans">My Study</h1>
+  <div class="mt-7">
+    <div class="flex justify-between items-center mb-2">
+      <h1 class="font-semibold text-lg text-gray-700 font-sans">My Study</h1>
 
-      <!-- <CardSlider /> -->
+      <CardSlider />
 
       <ViewAll route="/study" />
     </div>
@@ -15,15 +15,13 @@
         class="border border-gray-200 rounded-3xl bg-blue-50 p-3"
       >
         <div class="flex m-2">
-          <div class="h-16 w-16 rounded bg-red-200 mr-1">
-            
-          </div>
+          <span><i class="fa fa-folder fa-3x text-gray-600"></i></span>
 
           <div class="flex-1 ml-2 align-center">
-            <div class="block flex-start font-semibold text-xs">
+            <div class="block text-gray-700 flex-start font-medium text-xs">
               {{ studyCard.topic }}
             </div>
-            <div class="block text-xs font-medium">
+            <div class="block text-gray-600 text-xs font-normal">
               {{ studyCard.sub_topic }}
             </div>
           </div>
@@ -42,7 +40,7 @@
 <script>
 import Ratings from '@/components/Reusable/Ratings.vue'
 import ViewAll from '@/components/Reusable/ViewAll.vue'
-// import CardSlider from '@/components/Reusable/CardSlider.vue'
+import CardSlider from '@/components/Reusable/CardSlider.vue'
 import User from '@/components/Reusable/User.vue'
 
 export default {
@@ -50,7 +48,7 @@ export default {
   components: {
     Ratings,
     ViewAll,
-    // CardSlider,
+    CardSlider,
     User,
   },
   data: () => ({

@@ -1,9 +1,31 @@
 <template>
   <div>
     <div class="flex items-center justify-center px-3">
-      <i class="fas fa-chevron-left cursor-pointer text-sm"></i>
-      <span class="px-1 font-medium text-sm">o o o</span>
-      <i class="fas fa-chevron-right cursor-pointer text-sm"></i>
+      <span
+        style="font-size: 0.8rem;"
+        class="fas fa-chevron-left font-semibold cursor-pointer px-1"
+      ></span>
+      <!-- <span
+        v-for="(card, index) in cards"
+        :key="index"
+        class="fas fa-circle cursor-pointer text-xs"
+      ></span> -->
+      <span
+        class="fas fa-circle cursor-pointer px-1 text-blue-600"
+        style="font-size: 0.5rem;"
+      ></span>
+      <span
+        class="fas fa-circle cursor-pointer px-1"
+        style="font-size: 0.5rem;"
+      ></span>
+      <span
+        class="fas fa-circle cursor-pointer px-1"
+        style="font-size: 0.5rem;"
+      ></span>
+      <span
+        style="font-size: 0.8rem;"
+        class="fas fa-chevron-right font-bold cursor-pointer px-1"
+      ></span>
     </div>
   </div>
 </template>
@@ -12,6 +34,9 @@
 export default {
   name: 'CardSlider',
   methods: {},
+  props: {
+    cards: Number,
+  },
 }
 </script>
 

@@ -1,10 +1,10 @@
 <template>
-  <div class="flex rela tive min-h-screen">
+  <div class="md:f lex flex rela tive min-h-screen">
     <div class="w-56 bg-blue-200 rounded-r-3xl">
       <Navigation />
     </div>
 
-    <div class="bg-white">
+    <div class="bg-white flex-1 overflow-y-scroll">
       <ion-vue-router class="ml-56 overflow-y-scroll" />
     </div>
   </div>
@@ -18,6 +18,11 @@ export default {
   data: () => ({}),
   components: {
     Navigation,
+  },
+  methods: {
+    toggleSidebar: () => {
+      console.log('test')
+    },
   },
 }
 </script>

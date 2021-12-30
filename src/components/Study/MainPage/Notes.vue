@@ -1,7 +1,11 @@
 <template>
-  <div class="mt-8">
-    <div class="flex justify-between align-center mb-3">
-      <h1 class="font-semibold text-lg font-sans">Notes</h1>
+  <div class="mt-7">
+    <div class="flex justify-between items-center mb-2">
+      <h1 class="font-semibold text-lg text-gray-700 font-sans">
+        Notes
+      </h1>
+
+      <CardSlider />
 
       <ViewAll route="/study" />
     </div>
@@ -15,7 +19,9 @@
         <div
           class="w-full h-32 rounded-3xl bg-indigo-400 flex justify-center items-center"
         >
-          <span class="font-bold font-sans text-3xl">PREVIEW</span>
+          <span class="font-medium text-gray-700 font-sans text-2xl">
+            PREVIEW
+          </span>
         </div>
 
         <div class="p-3">
@@ -54,14 +60,16 @@ import Ratings from '@/components/Reusable/Ratings.vue'
 import Coins from '@/components/Reusable/Coins.vue'
 import User from '@/components/Reusable/User.vue'
 import ViewAll from '@/components/Reusable/ViewAll.vue'
+import CardSlider from '@/components/Reusable/CardSlider.vue'
 
 export default {
-  name: 'MyStudy',
+  name: 'Notes',
   components: {
     Ratings,
     Coins,
     User,
     ViewAll,
+    CardSlider,
   },
   data: () => ({
     notes: [

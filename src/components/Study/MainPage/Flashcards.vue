@@ -1,7 +1,11 @@
 <template>
-  <div class="mt-8">
-    <div class="flex justify-between align-center mb-3">
-      <h1 class="font-semibold text-lg font-sans">Flashcards</h1>
+  <div class="mt-7">
+    <div class="flex justify-between items-center mb-2">
+      <h1 class="font-semibold text-lg text-gray-700 font-sans">
+        Flashcards
+      </h1>
+
+      <CardSlider />
 
       <ViewAll route="/study" />
     </div>
@@ -10,14 +14,14 @@
       <div
         v-for="flashcard in flashcards"
         :key="flashcard"
-        class="flex flex-col border border-gray-200 rounded-3xl bg-blue-50 p-3"
+        class="flex flex-col border border-gray-200 rounded-3xl bg-blue-50 p-2"
       >
         <div class="m-2">
-          <span class="font-bold text-sm font-sans">
+          <span class="font-medium text-xs text-gray-700 font-sans">
             {{ flashcard.subject }} -
           </span>
 
-          <span class="font-medium text-sm font-sans">
+          <span class="font-normal text-gray-600 text-xs font-sans">
             {{ flashcard.title }}
           </span>
         </div>
@@ -49,6 +53,7 @@ import Coins from '@/components/Reusable/Coins.vue'
 import Cards from '@/components/Reusable/Cards.vue'
 import User from '@/components/Reusable/User.vue'
 import ViewAll from '@/components/Reusable/ViewAll.vue'
+import CardSlider from '@/components/Reusable/CardSlider.vue'
 
 export default {
   name: 'MyStudy',
@@ -58,6 +63,7 @@ export default {
     Cards,
     User,
     ViewAll,
+    CardSlider,
   },
   data: () => ({
     flashcards: [
@@ -114,7 +120,7 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
 .rated {
   color: orange;
 }

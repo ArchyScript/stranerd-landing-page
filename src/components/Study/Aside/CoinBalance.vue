@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="flex justify-between items-center p-2 text-sm bg-gray-200 rounded-xl"
-  >
+  <div class="flex justify-between items-center text-xs bg-gray-200 rounded-xl">
     <Coins
       value="10k"
       coin_position="left"
