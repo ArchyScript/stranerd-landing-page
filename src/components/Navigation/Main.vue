@@ -39,13 +39,13 @@ export default {
         active: false,
       },
       {
-        title: 'Study',
+        title: 'Stu dy',
         icon: 'fa fa-bar-chart',
         route: '/study',
         active: false,
       },
       {
-        title: 'Tutors',
+        title: 'Tut ors',
         icon: 'fa fa-users',
         route: '/tutors',
         active: false,
