@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-12 gap-8 my-8 mx-8">
+  <div class="grid grid-cols-12 gap-8 my-4 ml-8 pr-4 overflow-y-scroll">
     <div class="col-span-9">
       <!-- <TopBar /> -->
       <MyStudy />
@@ -53,4 +53,15 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide_scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide_scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+</style>

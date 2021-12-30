@@ -4,8 +4,8 @@
       <Navigation />
     </div>
 
-    <div class="bg-white flex-1 overflow-y-scroll">
-      <ion-vue-router class="ml-56 overflow-y-scroll" />
+    <div class="bg-white flex-1">
+      <ion-vue-router class="ml-56" />
     </div>
   </div>
 </template>

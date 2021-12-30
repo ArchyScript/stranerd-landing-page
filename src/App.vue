@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Layout class="overflow-y-scroll" />
+    <Layout />
   </div>
 </template>
 
