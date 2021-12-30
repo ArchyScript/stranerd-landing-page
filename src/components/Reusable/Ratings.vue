@@ -1,5 +1,5 @@
 <template>
-  <div v-if="value <= 5" class="flex justify-center items-center">
+  <div v-if="value <= 5" class="flex justify-center items-center text-gray-600">
     <span :class="`fa fa-star text-xs ${value > 0 ? 'rated' : ''}`"></span>
     <span :class="`fa fa-star text-xs ${value > 1 ? 'rated' : ''}`"></span>
     <span :class="`fa fa-star text-xs ${value > 2 ? 'rated' : ''}`"></span>
@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
 .rated {
   color: orange;
 }

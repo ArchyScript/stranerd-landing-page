@@ -1,12 +1,12 @@
 <template>
-  <div :class="`flex items-center justify-center  ${bg_color}`">
-    <span :class="`pr-1 ${text_color} font-semibold text-xs`">
+  <div class="flex items-center justify-center text-gray-600">
+    <span class="pr-1 font-medium text-xs">
       {{ name }}
     </span>
 
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="h-6 w-6 pr-1"
+      class="h-5 w-5"
       viewBox="0 0 20 20"
       fill="currentColor"
     >

@@ -1,7 +1,7 @@
 <template>
-  <div class="my-4">
+  <div class="mt-6">
     <div class="flex flex-row justify-between items-center mb-2">
-      <h1 class="text-gray-500 text-sm font-bold">Challenges</h1>
+      <h1 class="text-gray-700 text-sm font-semibold">Challenges</h1>
 
       <view-all route="/test" />
     </div>
@@ -13,8 +13,12 @@
         class="p-2 mb-1 rounded-lg w-full bg-gray-100 items-center"
       >
         <div class="mb-1 block text-xs items-start">
-          <span>{{ eachChallenge.title }}</span>
-          <strong class="ml-2">{{ eachChallenge.subject }}</strong>
+          <span class="text-gray-600 font-normal">
+            {{ eachChallenge.title }}
+          </span>
+          <span class="text-gray-700 font-medium">
+            {{ eachChallenge.subject }}
+          </span>
         </div>
 
         <div class="w-full bg-gray-400 rounded-lg h-1">

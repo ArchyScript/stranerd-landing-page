@@ -3,16 +3,16 @@
     <Coins
       value="10k"
       coin_position="left"
-      text_color="text-slate-500"
+      text_color="text-gray-700"
       coin_type="bronze"
     />
 
-    <span><i class="fa fa-plus text-slate-300"></i></span>
+    <span class="fa fa-plus text-gray-700"></span>
 
     <Coins
       value="250"
       coin_position="right"
-      text_color="text-slate-500"
+      text_color="text-gray-700"
       coin_type="gold"
     />
   </div>

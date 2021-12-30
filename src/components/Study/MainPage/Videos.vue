@@ -1,7 +1,11 @@
 <template>
-  <div class="mt-8">
-    <div class="flex justify-between align-center mb-3">
-      <h1 class="font-semibold text-lg font-sans">Videos</h1>
+  <div class="mt-7">
+    <div class="flex justify-between items-center mb-2">
+      <h1 class="font-semibold text-lg text-gray-700 font-sans">
+        Videos
+      </h1>
+
+      <CardSlider />
 
       <ViewAll route="/study" />
     </div>
@@ -13,30 +17,23 @@
         class="flex flex-col border border-gray-200 rounded-3xl bg-blue-50"
       >
         <div
-          class="w-full h-36 rounded-3xl bg-indigo-400 flex justify-center items-center"
+          class="w-full h-32 rounded-3xl bg-indigo-400 flex justify-center items-center"
         >
-          <iframe class="h-full w-full rounded-3xl" :src="video.src"></iframe>
-          <!--
+          <iframe
+            class="h-full w-full rounded-3xl"
             src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"
-          
-          <video class="h-full w-full rounded-3xl" controls>
-            <source
-              src="https://www.youtube.com/watch?v=aN1a_J33P0E"
-              type="video/mp4"
-            />
-          </video>
-          -->
+          ></iframe>
         </div>
 
         <div class="p-3">
           <div class="flex justify-between items-center mb-2">
             <div>
-              <span class="font-bold text-sm font-sans">
-                {{ video.subject }} -
+              <span class="font-medium text-xs text-gray-700 font-sans">
+                {{ video.topic }} -
               </span>
 
-              <span class="font-medium text-xs font-sans">
-                {{ video.title }}
+              <span class="font-normal text-xs text-gray-600 font-sans">
+                {{ video.sub_topic }} - Video
               </span>
             </div>
 
@@ -45,6 +42,8 @@
               :value="video.coin.value"
               :coin_type="video.coin.coin_type"
               coin_position="right"
+              text_color="text-blue-50"
+              bg_color="bg-gray-700"
             />
           </div>
 
@@ -64,6 +63,7 @@ import Ratings from '@/components/Reusable/Ratings.vue'
 import Coins from '@/components/Reusable/Coins.vue'
 import User from '@/components/Reusable/User.vue'
 import ViewAll from '@/components/Reusable/ViewAll.vue'
+import CardSlider from '@/components/Reusable/CardSlider.vue'
 
 export default {
   name: 'MyStudy',
@@ -72,12 +72,13 @@ export default {
     Coins,
     User,
     ViewAll,
+    CardSlider,
   },
   data: () => ({
     videos: [
       {
-        subject: 'Physics',
-        title: 'Introduction to Work., Energy and Power',
+        topic: 'Work and Energy',
+        sub_topic: 'Introduction to Unniversity Physics',
         user: { name: 'Daniel' },
         src: 'https://www.youtube.com/watch?v=mf2rvZ7Uv4s',
         coin: {
@@ -89,25 +90,25 @@ export default {
         rating: 4,
       },
       {
-        subject: 'Chemistry',
-        title: 'This is a brieft description of chemistry',
+        topic: 'Work and Energy',
+        sub_topic: 'Introduction to Unniversity Physics',
         user: { name: 'ArchyScript' },
         src: 'https://www.youtube.com/watch?v=aN1a_J33P0E',
         coin: {
           is_available: true,
           value: 55,
-          coin_type: 'gold',
+          coin_type: 'bronze',
           position: 'right',
         },
         rating: 3,
       },
       {
-        subject: 'Geography',
-        title: 'Nuclear Physic for first year College student',
+        topic: 'Work and Energy',
+        sub_topic: 'Introduction to Unniversity Physics',
         user: { name: 'Derin' },
         src: 'https://www.youtube.com/watch?v=8t13uQYHeX4',
         coin: {
-          is_available: true,
+          is_available: false,
           value: 87,
           coin_type: 'gold',
           position: 'right',

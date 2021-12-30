@@ -14,12 +14,14 @@
       <div
         v-for="note in notes"
         :key="note"
-        class="flex flex-col border border-gray-200 rounded-3xl bg-blue-50"
+        :class="`flex flex-col border border-gray-200 rounded-3xl ${
+          note.active == 'active' ? 'bg-red-50' : 'bg-blue-50'
+        }`"
       >
         <div
-          class="w-full h-32 rounded-3xl bg-indigo-400 flex justify-center items-center"
+          class="w-full h-32 rounded-3xl bg-indigo-300 flex justify-center items-center"
         >
-          <span class="font-medium text-gray-700 font-sans text-2xl">
+          <span class="font-medium text-blue-50 font-sans text-2xl">
             PREVIEW
           </span>
         </div>
@@ -27,12 +29,12 @@
         <div class="p-3">
           <div class="flex justify-between items-center mb-2">
             <div>
-              <span class="font-bold text-sm font-sans">
-                {{ note.subject }} -
+              <span class="font-medium text-xs text-gray-700 font-sans">
+                {{ note.topic }} -
               </span>
 
-              <span class="font-medium text-xs font-sans">
-                {{ note.title }}
+              <span class="font-normal text-xs text-gray-600 font-sans">
+                {{ note.sub_topic }}
               </span>
             </div>
 
@@ -41,6 +43,8 @@
               :value="note.coin.value"
               :coin_type="note.coin.coin_type"
               coin_position="right"
+              text_color="text-blue-50"
+              bg_color="bg-gray-700"
             />
           </div>
 
@@ -74,51 +78,42 @@ export default {
   data: () => ({
     notes: [
       {
-        subject: 'Physics',
-        title: 'Introduction to Work., Energy and Power',
+        topic: 'Work and Energy',
+        sub_topic: 'Introduction to Unniversity Physics',
         user: { name: 'Daniel' },
-        card: {
-          value: '',
-          teshhh: '',
-        },
         coin: {
           is_available: false,
           value: 46,
           coin_type: 'gold',
           position: 'right',
         },
+        active: 'active',
         rating: 4,
       },
       {
-        subject: 'Chemistry',
-        title: 'This is a brieft description of chemistry',
+        topic: 'Calculus',
+        sub_topic: 'Integration and Multivariate Calculus for Year 1',
         user: { name: 'Timmy' },
-        card: {
-          value: '',
-          teshhh: '',
-        },
         coin: {
           is_available: true,
           value: 55,
-          coin_type: 'gold',
+          coin_type: 'bronze',
           position: 'right',
         },
+        active: '',
         rating: 3,
       },
       {
-        subject: 'Geography',
-        title: 'Nuclear Physic for first year College student',
+        topic: 'Work and Energy',
+        sub_topic: 'Introduction to Unniversity Physics',
         user: { name: 'Derin' },
-        card: {
-          value: '',
-          teshhh: '',
-        },
         coin: {
-          is_available: true,
+          is_available: false,
           value: 87,
-          coin_type: 'gold',
+          coin_type: 'bronze',
           position: 'right',
         },
+        active: '',
         rating: 3,
       },
     ],

@@ -1,9 +1,11 @@
 <template>
-  <div class="mt-10">
-    <div class="flex justify-between align-center mb-3">
-      <h1 class="font-semibold text-lg font-sans">Study Sets</h1>
+  <div class="mt-7">
+    <div class="flex justify-between items-center mb-2">
+      <h1 class="font-semibold text-lg text-gray-700 font-sans">
+        Study Sets
+      </h1>
 
-      <!-- <CardSlider /> -->
+      <CardSlider />
 
       <ViewAll route="/study" />
     </div>
@@ -17,15 +19,20 @@
         } p-3`"
       >
         <div class="flex m-2">
-          <span><i class="fa fa-folder fa-3x"></i></span>
+          <span><i class="fa fa-archive fa-3x text-gray-600 mr-2"></i></span>
 
           <div class="flex-1 ml-2 align-center">
-            <div class="block flex-start font-semibold text-xs">
-              {{ studySet.topic }}
-            </div>
-            <div class="block text-xs font-medium">
+            <span class="font-medium text-xs text-gray-700 font-sans">
+              {{ studySet.title }} -
+            </span>
+
+            <span class="font-medium text-xs text-gray-600 font-sans">
               {{ studySet.sub_topic }}
-            </div>
+            </span>
+
+            <span class="font-medium text-sm uppercase text-gray-700 font-sans">
+              - {{ studySet.school }}
+            </span>
           </div>
         </div>
 
@@ -33,7 +40,7 @@
           <MultipleCards
             :video="studySet.multiple_cards.video"
             :flashcard="studySet.multiple_cards.flashcard"
-            :document="studySet.multiple_cards.document"
+            :note="studySet.multiple_cards.note"
           />
 
           <Coins
@@ -41,13 +48,15 @@
             :value="studySet.coin.value"
             :coin_type="studySet.coin.coin_type"
             coin_position="right"
+            text_color="text-blue-50"
+            bg_color="bg-gray-700"
           />
         </div>
 
         <div class="flex justify-between m-2 mt-4">
           <Ratings :value="studySet.rating" />
 
-          <User :name="studySet.name" />
+          <User :name="studySet.user.name" />
         </div>
       </div>
     </div>
@@ -58,7 +67,7 @@
 import Ratings from '@/components/Reusable/Ratings.vue'
 import ViewAll from '@/components/Reusable/ViewAll.vue'
 import Coins from '@/components/Reusable/Coins.vue'
-// import CardSlider from '@/components/Reusable/CardSlider.vue'
+import CardSlider from '@/components/Reusable/CardSlider.vue'
 import User from '@/components/Reusable/User.vue'
 import MultipleCards from '@/components/Reusable/MultipleCards.vue'
 
@@ -69,19 +78,19 @@ export default {
     ViewAll,
     MultipleCards,
     Coins,
-    // CardSlider,
+    CardSlider,
     User,
   },
   data: () => ({
     studySets: [
       {
-        topic: 'Work and Energy',
-        sub_topic: 'Introduction to Work., Energy and Power',
-        name: 'Daniel',
-        subject: 'Physics',
+        title: '',
+        sub_topic: 'Compiled Resources fro 100l CEG',
+        user: { name: 'Derin' },
+        school: 'Unilag',
         multiple_cards: {
           flashcard: 'flashcard',
-          document: 'document',
+          note: 'note',
           video: 'video',
         },
         coin: {
@@ -94,36 +103,36 @@ export default {
         rating: 4,
       },
       {
-        topic: 'Electrolysis',
-        sub_topic: 'This is a brieft description of electrolysis in chemistry',
-        name: 'Tola',
-        subject: 'Chemistry',
+        title: 'WAEC Physics',
+        sub_topic: 'All you need for A1',
+        user: { name: 'Derin' },
+        school: 'OAU',
         multiple_cards: {
           flashcard: 'flashcard',
-          document: 'doc ument',
-          video: 'video',
+          note: 'note',
+          video: '',
         },
         coin: {
-          is_available: false,
+          is_available: true,
           value: 46,
-          coin_type: 'gold',
+          coin_type: 'bronze',
           position: 'right',
         },
         active: '',
         rating: 3,
       },
       {
-        topic: 'Nuclear Bomb',
-        sub_topic: 'Nuclear Physic for first year College student',
-        name: 'Derin',
-        subject: 'Physics',
+        title: 'Organized MEG notes',
+        sub_topic: '100l to 500l',
+        user: { name: 'Derin' },
+        school: 'Unilag',
         multiple_cards: {
-          flashcard: 'flashcard',
-          document: 'document',
-          video: 'video',
+          flashcard: '',
+          note: 'note',
+          video: '',
         },
         coin: {
-          is_available: true,
+          is_available: false,
           value: 46,
           coin_type: 'gold',
           position: 'right',
@@ -136,4 +145,4 @@ export default {
 }
 </script>
 
-<style scope></style>
+<style scoped></style>

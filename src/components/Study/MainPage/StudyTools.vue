@@ -1,7 +1,9 @@
 <template>
-  <div class="mt-10">
-    <div class="flex justify-between align-center mb-3">
-      <h1 class="font-semibold text-lg text-gray-700 font-sans">Study Tools</h1>
+  <div class="mt-7">
+    <div class="flex justify-between items-center mb-2">
+      <h1 class="font-semibold text-lg text-gray-700 font-sans">
+        Study Tools
+      </h1>
 
       <CardSlider />
 
@@ -14,27 +16,27 @@
         :key="studyTool"
         class="flex justify-center items-center flex-col border border-gray-200 rounded-3xl bg-blue-50 px-3"
       >
-        <span class="block text-center mt-2 mb-1 p-2">
-          <i class="fa fa-folder fa-3x text-gray-600"></i>
-        </span>
+        <span
+          :class="`block text-center mt-2 mb-1 p-1 ${studyTool.icon} fa-3x text-gray-600`"
+        ></span>
 
         <span
           class="block text-center mb-1 font-medium text-gray-700 text-sm font-sans"
         >
-          Study Tools
+          {{ studyTool.title }}
         </span>
 
         <span
           class="block text-center my-1 font-normal text-gray-600 text-xs font-sans"
         >
-          This is a description of this current card This is a rent card hwjk
+          {{ studyTool.sub_title }}
         </span>
 
         <button
           type="button"
-          class="block w-full px-6 py-2 m-3 border border-solid border-gray-800 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+          class="block w-full px-6 py-2 m-3 border border-solid border-gray-800 text-gray-800 font-medium text-xs leading-tight rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
         >
-          Still testing
+          {{ studyTool.btn_text }}
         </button>
       </div>
     </div>
@@ -54,33 +56,29 @@ export default {
   data: () => ({
     studyTools: [
       {
-        topic: 'Work and Energy',
-        sub_topic: 'Introduction to Work., Energy and Power',
-        name: 'Daniel',
-        subject: 'Physics',
-        rating: 4,
+        icon: 'fa fa-paste',
+        title: 'Study With Flashcards',
+        sub_title:
+          'Scientifically proven to improve memory and make studying easier',
+        btn_text: 'Create a Flashcard',
       },
       {
-        topic: 'Electrolysis',
-        sub_topic: 'This is a brieft description of electrolysis in chemistry',
-        name: 'Timmy',
-        subject: 'Chemistry',
-        rating: 3,
+        icon: 'fa fa-archive',
+        title: 'Organize your Study',
+        sub_title:
+          'Put flashcards, notes and videos with the same aim together in a folder',
+        btn_text: 'Create a Study Set',
       },
       {
-        topic: 'Nuclear Physics',
-        sub_topic: 'Nuclear Physic for first year College student',
-        name: 'Derin',
-        subject: 'Physics',
-        rating: 3,
+        icon: 'fa fa-crosshairs',
+        title: 'Find more Resources',
+        sub_title:
+          'Browse through a library of flashcards, notes, videos and sets to study with',
+        btn_text: 'Explore',
       },
     ],
   }),
 }
 </script>
 
-<style scope>
-.rated {
-  color: orange;
-}
-</style>
+<style scoped></style>

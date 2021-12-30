@@ -1,13 +1,13 @@
 <template>
   <div>
     <div
-      class="flex items-center justify-center cursor-pointer py-2 px-3 text-blue-500 text-xs"
+      class="flex items-center justify-center cursor-pointer py-2 px-3 text-blue-600 text-xs"
       @click="changeRoutes(route)"
     >
       <span class="pr-1 font-medium">view all</span>
       <span
         style="font-size: 0.8rem;"
-        class="fas fa-chevron-right font-bold cursor-pointer px-1"
+        class="fas fa-chevron-right font-semibold cursor-pointer px-1"
       ></span>
     </div>
   </div>
@@ -30,8 +30,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.fas {
-  font-size: 0.6rem;
-}
-</style>
+<style scoped></style>

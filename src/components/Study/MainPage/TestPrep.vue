@@ -23,42 +23,44 @@
         </div>
 
         <span
-          class="block myy-1 text-gray-700 font-normal text-center text-sm font-sans"
+          class="block myy-1 text-gray-700 font-normal text-center text-xs font-sans"
         >
           {{ testPrep.description }}
         </span>
 
         <div v-if="!testPrep.isFree" class="my-4">
           <div class="flex justify-center items-center mb-3">
-            <span class="mr-1 text-sm font-normal text-center">
+            <span class="mr-1 text-xs font-medium text-center text-gray-700">
               Unlock for a month
             </span>
+            -
             <Coins
               :value="testPrep.unlock.value"
               :coin_type="testPrep.unlock.coin_type"
+              text_color="text-gray-700"
               coin_position="right"
             />
           </div>
 
           <button
             type="button"
-            class="block w-full px-6 py-2 mt-1 bg-gray-800 text-blue-50 font-medium text-xs leading-tight uppercase rounded-xl hover:bg-black hover:text-white transition duration-150 ease-in-out"
+            class="block w-full px-6 py-2 mt-1 bg-gray-600 text-blue-50 font-medium text-xs leading-tight rounded-xl hover:bg-gray-800 hover:text-white transition duration-150 ease-in-out"
           >
-            Unlock Now
+            Unlock
           </button>
         </div>
 
         <div v-if="testPrep.isFree" class="my-4">
           <button
             type="button"
-            class="block w-full px-6 py-2 mb-2 bg-gray-800 text-blue-50 font-medium text-xs leading-tight uppercase rounded-xl hover:bg-black hover:text-white transition duration-150 ease-in-out"
+            class="block w-full px-6 py-2 mb-2 bg-gray-600 text-blue-50 font-medium text-xs leading-tight rounded-xl hover:bg-gray-800 hover:text-white transition duration-150 ease-in-out"
           >
             Test Yourself
           </button>
 
           <button
             type="button"
-            class="block w-full px-6 py-2 mt-1 border border-solid border-gray-800 text-gray-800 font-medium text-xs leading-tight uppercase rounded-xl hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+            class="block w-full px-6 py-2 mt-1 border border-solid border-gray-800 text-gray-800 font-medium text-xs leading-tight rounded-xl hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
           >
             Study Solutions
           </button>
@@ -84,9 +86,7 @@ export default {
     testPreps: [
       {
         test_type: 'Jamb',
-        description:
-          'Introduction to Work., Energy and Power dl;ds testig text lkp; ',
-        name: 'Daniel',
+        description: 'Gateway exams for tertiary level institutions in Nigeria',
         unlock: {
           coin_type: 'bronze',
           value: 30,
@@ -96,18 +96,17 @@ export default {
       {
         test_type: 'SAT',
         description:
-          'This is a brieft description of electrolysis in chemistry',
-        name: 'Timmy',
+          'The SAT is a standardized test widelyused for college admissions in the USA',
         unlock: {
-          coin_type: 'gold',
-          value: 15,
+          coin_type: 'bronze',
+          value: 50,
         },
         isFree: false,
       },
       {
-        test_type: 'UTME',
-        description: 'Nuclear Physic for first year College student',
-        name: 'Derin',
+        test_type: 'WAEC',
+        description:
+          'Standardized test for West African secondary education completion',
         unlock: {
           coin_type: 'gold',
           value: 5,
@@ -119,8 +118,4 @@ export default {
 }
 </script>
 
-<style scope>
-.rated {
-  color: orange;
-}
-</style>
+<style scoped></style>

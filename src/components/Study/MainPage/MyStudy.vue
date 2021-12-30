@@ -12,10 +12,12 @@
       <div
         v-for="studyCard in myStudyCards"
         :key="studyCard"
-        class="border border-gray-200 rounded-3xl bg-blue-50 p-3"
+        :class="`border border-gray-200 rounded-3xl ${
+          studyCard.active == 'active' ? 'bg-yellow-100' : 'bg-blue-50'
+        } p-3`"
       >
         <div class="flex m-2">
-          <span><i class="fa fa-folder fa-3x text-gray-600"></i></span>
+          <span :class="`${studyCard.icon} fa-3x text-gray-600`"></span>
 
           <div class="flex-1 ml-2 align-center">
             <div class="block text-gray-700 flex-start font-medium text-xs">
@@ -33,6 +35,41 @@
           <User :name="studyCard.name" />
         </div>
       </div>
+
+      <div
+        v-for="flashcard in flashcards"
+        :key="flashcard"
+        class="flex flex-col border border-gray-200 rounded-3xl bg-blue-50 p-2"
+      >
+        <div class="m-2">
+          <span class="font-medium text-xs text-gray-700 font-sans">
+            {{ flashcard.subject }} -
+          </span>
+
+          <span class="font-normal text-gray-600 text-xs font-sans">
+            {{ flashcard.title }}
+          </span>
+        </div>
+
+        <div class="flex justify-between items-center m-1">
+          <Ratings :value="flashcard.rating" />
+
+          <Coins
+            v-if="flashcard.coin.is_available"
+            :value="flashcard.coin.value"
+            :coin_type="flashcard.coin.coin_type"
+            coin_position="right"
+            text_color="text-blue-50"
+            bg_color="bg-gray-700"
+          />
+        </div>
+
+        <div class="flex justify-between m-1">
+          <Cards value="3" />
+
+          <User :name="flashcard.user.name" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -40,6 +77,8 @@
 <script>
 import Ratings from '@/components/Reusable/Ratings.vue'
 import ViewAll from '@/components/Reusable/ViewAll.vue'
+import Coins from '@/components/Reusable/Coins.vue'
+import Cards from '@/components/Reusable/Cards.vue'
 import CardSlider from '@/components/Reusable/CardSlider.vue'
 import User from '@/components/Reusable/User.vue'
 
@@ -47,6 +86,8 @@ export default {
   name: 'MyStudy',
   components: {
     Ratings,
+    Cards,
+    Coins,
     ViewAll,
     CardSlider,
     User,
@@ -54,33 +95,43 @@ export default {
   data: () => ({
     myStudyCards: [
       {
+        icon: 'fa fa-home',
         topic: 'Work and Energy',
-        sub_topic: 'Introduction to Work., Energy and Power',
+        sub_topic: 'Introduction to University Physics',
         name: 'Daniel',
         subject: 'Physics',
+        active: 'active',
         rating: 4,
       },
       {
+        icon: 'fa fa-folder',
         topic: 'Electrolysis',
-        sub_topic: 'This is a brieft description of electrolysis in chemistry',
+        sub_topic: 'Integration and Multivariate Calculus for Year 1',
         name: 'Timmy',
         subject: 'Chemistry',
+        active: '',
         rating: 3,
       },
+    ],
+    flashcards: [
       {
-        topic: 'Nuclear Physics',
-        sub_topic: 'Nuclear Physic for first year College student',
-        name: 'Derin',
         subject: 'Physics',
-        rating: 3,
+        title: 'Waves and Sound (100l 1st semester exam)',
+        user: { name: 'Daniel' },
+        card: {
+          value: 50,
+        },
+        coin: {
+          is_available: false,
+          value: 46,
+          coin_type: 'gold',
+          position: 'right',
+        },
+        rating: 4,
       },
     ],
   }),
 }
 </script>
 
-<style scope>
-.rated {
-  color: orange;
-}
-</style>
+<style scoped></style>

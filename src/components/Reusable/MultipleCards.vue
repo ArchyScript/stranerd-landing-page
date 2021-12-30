@@ -1,11 +1,20 @@
 <template>
-  <div class="flex justify-center items-center">
+  <div class="flex justify-center items-center text-gray-600">
     <span
+      style="font-size: 0.8rem;"
       v-if="flashcard == 'flashcard'"
-      class="fa fa-star text-xs pr-2"
+      class="fa fa-paste text-xs pr-2"
     ></span>
-    <span v-if="document == 'document'" class="fa fa-file text-xs pr-2"></span>
-    <span v-if="video == 'video'" class="fa fa-folder text-xs pr-2"></span>
+    <span
+      style="font-size: 0.8rem;"
+      v-if="note == 'note'"
+      class="fa fa-file-text text-xs pr-2"
+    ></span>
+    <span
+      style="font-size: 0.8rem;"
+      v-if="video == 'video'"
+      class="fab fa-youtube text-xs pr-2"
+    ></span>
   </div>
 </template>
 
@@ -14,14 +23,10 @@ export default {
   name: 'MultipleCards',
   props: {
     flashcard: String,
-    document: String,
+    note: String,
     video: String,
   },
 }
 </script>
 
-<style scope>
-.rated {
-  color: orange;
-}
-</style>
+<style scoped></style>

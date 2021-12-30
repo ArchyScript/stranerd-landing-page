@@ -2,23 +2,28 @@
   <div>
     <div
       v-if="coin_position == 'right'"
-      :class="`flex items-center justify-center px-2 py-1 ${bg_color} border border-gray-200 rounded-lg`"
+      :class="`flex items-center justify-center px-2 py-1 ${bg_color} rounded-lg`"
     >
-      <span :class="`pr-3 ${text_color} font-bold text-sm`">
+      <span :class="`pr-2 ${text_color} font-medium text-xs`">
         {{ value }}
       </span>
-      <i :class="`fas fa-coins ${coin_type}`"></i>
+      <span
+        style="font-size: 1.1rem;"
+        :class="`fas fa-coins ${coin_type}`"
+      ></span>
     </div>
 
     <div
       v-if="coin_position == 'left'"
-      :class="`flex items-center justify-center px-2 py-1 ${bg_color} border border-gray-200 rounded-lg`"
+      :class="`flex items-center justify-center px-2 py-1 ${bg_color} rounded-lg`"
     >
-      <i :class="`fas fa-coins ${coin_type} pr-2`"></i>
+      <span
+        style="font-size: 1.1rem;"
+        :class="`fas fa-coins ${coin_type} pr-2`"
+      ></span>
 
-      <span :class="`${text_color} font-bold text-sm`">
+      <span :class="`${text_color} font-medium text-sm`">
         {{ value }}
-        <!-- ${coin_type == 'gold' ? 'orange' : 'text-blue-500'} -->
       </span>
     </div>
   </div>
@@ -39,12 +44,9 @@ export default {
 
 <style scope>
 .gold {
-  color: gold;
+  color: #fee103;
 }
 .bronze {
   color: #cd7f32;
-}
-.fas {
-  font-size: 0.6rem;
 }
 </style>

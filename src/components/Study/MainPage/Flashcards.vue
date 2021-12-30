@@ -34,6 +34,8 @@
             :value="flashcard.coin.value"
             :coin_type="flashcard.coin.coin_type"
             coin_position="right"
+            text_color="text-blue-50"
+            bg_color="bg-gray-700"
           />
         </div>
 
@@ -69,11 +71,10 @@ export default {
     flashcards: [
       {
         subject: 'Physics',
-        title: 'Introduction to Work., Energy and Power',
+        title: 'Waves and Sound (100l 1st semester exam)',
         user: { name: 'Daniel' },
         card: {
-          value: '',
-          teshhh: '',
+          value: 50,
         },
         coin: {
           is_available: false,
@@ -84,32 +85,30 @@ export default {
         rating: 4,
       },
       {
-        subject: 'Chemistry',
-        title: 'This is a brieft description of chemistry',
+        subject: 'Physics',
+        title: 'Waves and Sound (100l 1st semester exam)',
         user: { name: 'Timmy' },
         card: {
-          value: '',
-          teshhh: '',
+          value: 50,
         },
         coin: {
           is_available: true,
           value: 55,
-          coin_type: 'gold',
+          coin_type: 'bronze',
           position: 'right',
         },
         rating: 3,
       },
       {
-        subject: 'Geography',
-        title: 'Nuclear Physic for first year College student',
+        subject: 'Physics',
+        title: 'Waves and Sound (100l 1st semester exam)',
         user: { name: 'Derin' },
         card: {
-          value: '',
-          teshhh: '',
+          value: 50,
         },
         coin: {
-          is_available: true,
-          value: 87,
+          is_available: false,
+          value: 60,
           coin_type: 'gold',
           position: 'right',
         },
