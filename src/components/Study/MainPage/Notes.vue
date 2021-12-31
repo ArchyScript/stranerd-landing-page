@@ -5,12 +5,12 @@
         Notes
       </h1>
 
-      <CardSlider />
+      <CardSlider class="hidden md:flex" />
 
-      <ViewAll route="/study" />
+      <ViewAll route="/study" class="hidden md:flex" />
     </div>
 
-    <div class="grid grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
       <div
         v-for="note in notes"
         :key="note"

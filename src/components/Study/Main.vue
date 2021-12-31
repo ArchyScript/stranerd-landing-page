@@ -1,6 +1,8 @@
 <template>
-  <div class="grid grid-cols-12 gap-8 my-4 ml-8 pr-6 overflow-y-scroll">
-    <div class="col-span-9">
+  <div class="grid grid-cols-12 gap-8 mb-4 mt-4 ml-6 pr-6 overflow-y-scroll">
+    <div
+      class="col-span-12 md:col-span-8 lg:col-span-12 xl:col-span-9 max-w-screen-xl  mx-auto"
+    >
       <TopBar />
       <MyStudy />
       <StudyTools />
@@ -11,7 +13,7 @@
       <StudySets />
     </div>
 
-    <div class="col-span-3">
+    <div class="col-span-12 md:col-span-4 lg:col-span-12 lg:w-5xl xl:col-span-3">
       <CoinBalance />
       <Challenges />
       <Ranking />

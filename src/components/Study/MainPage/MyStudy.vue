@@ -3,21 +3,26 @@
     <div class="flex justify-between items-center mb-2">
       <h1 class="font-semibold text-lg text-gray-700 font-sans">My Study</h1>
 
-      <CardSlider />
+      <CardSlider class="hidden md:flex" />
 
-      <ViewAll route="/study" />
+      <ViewAll route="/study" class="hidden md:flex" />
     </div>
 
-    <div class="grid grid-cols-3 gap-3">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
       <div
         v-for="studyCard in myStudyCards"
         :key="studyCard"
         :class="`border border-gray-200 rounded-3xl ${
           studyCard.active == 'active' ? 'bg-yellow-100' : 'bg-blue-50'
-        } p-3`"
+        } p-2 lg:p-3`"
       >
-        <div class="flex m-2">
-          <span :class="`${studyCard.icon} fa-3x text-gray-600`"></span>
+        <div class="flex justify-center items-center m-2">
+          <span
+            :class="`${studyCard.icon} hidden xl:flex fa-3x text-gray-600`"
+          ></span>
+          <span
+            :class="`${studyCard.icon} flex xl:hidden fa-2x text-gray-600`"
+          ></span>
 
           <div class="flex-1 ml-2 align-center">
             <div class="block text-gray-700 flex-start font-medium text-xs">
@@ -29,7 +34,7 @@
           </div>
         </div>
 
-        <div class="flex justify-between m-2 mt-4">
+        <div class="flex items-center justify-between m-2 mt-3">
           <Ratings :value="studyCard.rating" />
 
           <User :name="studyCard.name" />
@@ -39,7 +44,7 @@
       <div
         v-for="flashcard in flashcards"
         :key="flashcard"
-        class="flex flex-col border border-gray-200 rounded-3xl bg-blue-50 p-2"
+        class="hidden lg:flex lg:flex-col border border-gray-200 rounded-3xl bg-blue-50 p-2"
       >
         <div class="m-2">
           <span class="font-medium text-xs text-gray-700 font-sans">
@@ -51,7 +56,7 @@
           </span>
         </div>
 
-        <div class="flex justify-between items-center m-1">
+        <div class="flex items-center justify-between m-1">
           <Ratings :value="flashcard.rating" />
 
           <Coins
@@ -64,7 +69,7 @@
           />
         </div>
 
-        <div class="flex justify-between m-1">
+        <div class="flex items-center justify-between m-1">
           <Cards value="3" />
 
           <User :name="flashcard.user.name" />
