@@ -10,8 +10,8 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
       <div
-        v-for="studyCard in myStudyCards"
-        :key="studyCard"
+        v-for="(studyCard, index) in myStudyCards"
+        :key="`${studyCard}_${index}`"
         :class="`border border-gray-200 rounded-3xl ${
           studyCard.active == 'active' ? 'bg-yellow-100' : 'bg-blue-50'
         } p-2 lg:p-3`"
@@ -70,7 +70,7 @@
         </div>
 
         <div class="flex items-center justify-between m-1">
-          <Cards value="3" />
+          <Cards :value="flashcard.card.value" />
 
           <User :name="flashcard.user.name" />
         </div>

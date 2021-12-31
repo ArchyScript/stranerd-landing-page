@@ -12,8 +12,8 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
       <div
-        v-for="testPrep in testPreps"
-        :key="testPrep"
+        v-for="(testPrep, index) in testPreps"
+        :key="`${testPrep}_${index}`"
         class="flex flex-col bborder border-gray-200 rounded-3xl bg-blue-50 p-3"
       >
         <div
@@ -35,8 +35,8 @@
             </span>
             -
             <Coins
-              :value="testPrep.unlock.value"
-              :coin_type="testPrep.unlock.coin_type"
+              :value="testPrep.coin.value"
+              :coin_type="testPrep.coin.coin_type"
               text_color="text-gray-700"
               coin_position="right"
             />
@@ -87,7 +87,7 @@ export default {
       {
         test_type: 'Jamb',
         description: 'Gateway exams for tertiary level institutions in Nigeria',
-        unlock: {
+        coin: {
           coin_type: 'bronze',
           value: 30,
         },
@@ -97,7 +97,7 @@ export default {
         test_type: 'SAT',
         description:
           'The SAT is a standardized test widelyused for college admissions in the USA',
-        unlock: {
+        coin: {
           coin_type: 'bronze',
           value: 50,
         },
@@ -107,7 +107,7 @@ export default {
         test_type: 'WAEC',
         description:
           'Standardized test for West African secondary education completion',
-        unlock: {
+        coin: {
           coin_type: 'gold',
           value: 5,
         },

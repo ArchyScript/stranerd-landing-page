@@ -1,12 +1,13 @@
 <template>
-  <div class="w-16 lg:w-52 text-black py-6 relative">
+  <div class="w-16 lg:w-52 text-black transform py-6 relative">
     <div class="mt-4 mb-6 justify-center items-center hidden lg:flex">
       <img src="@/assets/stranerd_logo.svg" alt="stranerd logo" class="h-5" />
     </div>
 
     <!-- Menu Bar -->
     <!-- <span
-      class="fa fa-bars text-gray-800 flex mx-auto text-sm cursor-pointer bg-gray-200 hover:bg-white hover:text-black absolute left-0 rounded-tr-3xl top-0 py-4 px-5 lg:hidden w-full"
+      @click="toggleSidebarBoolean == !toggleSidebarBoolean"
+      class="fa fa-bars text-gray-800 flex mx-auto text-sm cursor-pointer bg-gray-200 hover:bg-white hover:text-black fixed right-0 rounded-tr-3xl top-0 py-4 px-5 lg:hidden w-full"
     ></span> -->
 
     <!-- vertical spacinng on smaller screen-->

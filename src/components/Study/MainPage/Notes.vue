@@ -12,8 +12,8 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
       <div
-        v-for="note in notes"
-        :key="note"
+        v-for="(note, index) in notes"
+        :key="`${note}_${index}`"
         :class="`flex flex-col border border-gray-200 rounded-3xl ${
           note.active == 'active' ? 'bg-red-50' : 'bg-blue-50'
         }`"
@@ -121,8 +121,4 @@ export default {
 }
 </script>
 
-<style scope>
-.rated {
-  color: orange;
-}
-</style>
+<style scoped></style>

@@ -33,7 +33,7 @@
 export default {
   name: 'Ratings',
   props: {
-    value: String || Number,
+    value: Number,
     coin_type: String,
     bg_color: String,
     text_color: String,

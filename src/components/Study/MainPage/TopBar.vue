@@ -17,12 +17,12 @@
     <span
       @click="changeRoutes('/')"
       style="font-size: 0.9rem;"
-      class="fa fa-plus flex lg:hidden items-center cursor-pointer text-gray-600 bg-gray-100 justify-center py-2 px-4 font-xs hover:text-white hover:bg-indigo-500 mx-2 rounded-lg"
+      class="fa fa-plus hidden sm:flex lg:hidden items-center cursor-pointer text-gray-600 bg-gray-100 justify-center py-2 px-4 font-xs hover:text-white hover:bg-indigo-500 mx-2 rounded-lg"
     ></span>
 
     <div
-      v-for="topbarBtn in topbarBtns"
-      :key="topbarBtn"
+      v-for="(topbarBtn, index) in topbarBtns"
+      :key="`${topbarBtn}_${index}`"
       class="hidden lg:flex items-center justify-between"
     >
       <span

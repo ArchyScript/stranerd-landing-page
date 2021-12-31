@@ -12,8 +12,8 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
       <div
-        v-for="video in videos"
-        :key="video"
+        v-for="(video, index) in videos"
+        :key="`${video}_${index}`"
         class="flex flex-col border border-gray-200 rounded-3xl bg-blue-50"
       >
         <div
@@ -92,7 +92,7 @@ export default {
       {
         topic: 'Work and Energy',
         sub_topic: 'Introduction to Unniversity Physics',
-        user: { name: 'ArchyScript' },
+        user: { name: 'Dray' },
         src: 'https://www.youtube.com/watch?v=aN1a_J33P0E',
         coin: {
           is_available: true,

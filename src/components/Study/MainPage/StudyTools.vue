@@ -12,8 +12,8 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
       <div
-        v-for="studyTool in studyTools"
-        :key="studyTool"
+        v-for="(studyTool, index) in studyTools"
+        :key="`${studyTool}_${index}`"
         class="flex justify-center items-center flex-col border border-gray-200 rounded-3xl bg-blue-50 px-3"
       >
         <div class="flex justify-center items-center">

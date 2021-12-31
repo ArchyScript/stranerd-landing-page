@@ -12,8 +12,8 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
       <div
-        v-for="flashcard in flashcards"
-        :key="flashcard"
+        v-for="(flashcard, index) in flashcards"
+        :key="`${flashcard}_${index}`"
         class="flex flex-col border border-gray-200 rounded-3xl bg-blue-50 p-2"
       >
         <div class="m-2">
