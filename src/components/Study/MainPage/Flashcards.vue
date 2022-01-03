@@ -40,7 +40,7 @@
         </div>
 
         <div class="flex justify-between m-2">
-          <Cards value="3" />
+          <Cards :value="flashcard.card.value" />
 
           <User :name="flashcard.user.name" />
         </div>
@@ -58,7 +58,7 @@ import ViewAll from '@/components/Reusable/ViewAll.vue'
 import CardSlider from '@/components/Reusable/CardSlider.vue'
 
 export default {
-  name: 'MyStudy',
+  name: 'Flashcards',
   components: {
     Ratings,
     Coins,

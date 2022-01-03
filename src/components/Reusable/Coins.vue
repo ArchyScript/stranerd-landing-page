@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: 'Ratings',
+  name: 'Coins',
   props: {
     value: Number,
     coin_type: String,

@@ -11,7 +11,7 @@
     </div> -->
 
     <div class="flex min-h-screen">
-      <div :class="`w-16 bg-blue-200 rounded-r-3xl lg:w-52`">
+      <div :class="`sidebar w-12 md:w-16 bg-blue-200 rounded-r-3xl lg:w-52`">
         <Navigation />
       </div>
 
@@ -24,7 +24,7 @@
       <!-- ${isSidebarOpen == true ? 'ml-16' : 'ml-0'} -->
 
       <div class="bg-white flex-1">
-        <ion-vue-router :class="`ml-16 lg:ml-52`" />
+        <ion-vue-router :class="`main_content ml-12 md:ml-16 lg:ml-52`" />
       </div>
     </div>
   </div>
@@ -51,4 +51,22 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+/*
+@media (max-width: 369px) and (min-width: 50px) {
+  .ml-16 {
+    margin-left: 40px;
+  }
+  .w-16 {
+    max-width: 30px;
+  }
+}
+@media (max-width: 369px) and (min-width: 50px) {
+  .sidebar {
+    max-width: 20px;
+  }
+  .main_content {
+    margin-left: 20px;
+  }
+} */
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-16 lg:w-52 text-black transform py-6 relative">
+  <div class="w-12 md:w-16 lg:w-52 text-black transform py-3 lg:py-6 relative">
     <div class="mt-4 mb-6 justify-center items-center hidden lg:flex">
       <img src="@/assets/stranerd_logo.svg" alt="stranerd logo" class="h-5" />
     </div>
@@ -11,7 +11,7 @@
     ></span> -->
 
     <!-- vertical spacinng on smaller screen-->
-    <div class="my-10 lg:y-0"></div>
+    <div class="mt-6 lg:my-0"></div>
 
     <div
       v-for="eachSidebarListAndRoute in allSidebarListAndRoutes"
@@ -21,7 +21,7 @@
         @click="changeRoutes(eachSidebarListAndRoute)"
         :class="`nav_item flex items-center  cursor-pointer select-none ${
           eachSidebarListAndRoute.active ? 'active' : ''
-        } p-3  hover:bg-white font-normal text-xs ml-3 mb-1 lg:ml-10 rounded-l-3xl`"
+        } p-3  hover:bg-white font-normal text-xs ml-1 md:ml-3 mb-1 lg:ml-10 rounded-l-3xl`"
         :title="eachSidebarListAndRoute.title"
       >
         <span

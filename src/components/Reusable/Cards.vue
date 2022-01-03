@@ -20,10 +20,7 @@
 export default {
   name: 'Cards',
   props: {
-    value: {
-      type: Number,
-      default: 0,
-    },
+    value: Number,
   },
 }
 </script>

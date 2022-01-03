@@ -7,8 +7,8 @@
     >
       <TopBar class="resp_on_xs_screen" />
       <MyStudy class="resp_on_xs_screen" />
-      <StudyTools class="resp_on_xs_screen" />
       <TestPrep class="resp_on_xs_screen" />
+      <StudyTools class="resp_on_xs_screen" />
       <Flashcards class="resp_on_xs_screen" />
       <Notes class="resp_on_xs_screen" />
       <Videos class="resp_on_xs_screen" />
@@ -16,7 +16,7 @@
     </div>
 
     <div
-      class="col-span-12 md:col-span-4 lg:col-span-12 lg:w-5xl xl:col-span-3"
+      class="aside_section col-span-12 md:col-span-4 w-full lg:col-span-12 xl:col-span-3"
     >
       <CoinBalance class="resp_on_xs_screen" />
       <Challenges class="resp_on_xs_screen" />
@@ -41,7 +41,7 @@ import Challenges from "./Aside/Challenges"
 import Ranking from "./Aside/Ranking"
 
 export default {
-  name: 'MainPage',
+  name: 'StudyMainPage',
   data: () => ({}),
   components: {
     MyStudy,
@@ -71,32 +71,9 @@ export default {
   scrollbar-width: none; /* Firefox */
 }
 
-@media (max-width: 500px) {
-  .main_page {
-    overflow-x: scroll;
-  }
-  .resp_on_xs_screen {
-    max-width: 400px;
-    margin-right: auto;
-  }
-}
-@media (max-width: 499px) and (min-width: 400px) {
-  .resp_on_xs_screen {
-    max-width: 360px;
-    margin-right: auto;
-  }
-}
-@media (max-width: 399px) and (min-width: 350px) {
-  .resp_on_xs_screen {
-    max-width: 320px;
-    margin-right: auto;
-  }
-}
-
-@media (max-width: 349px) {
-  .resp_on_xs_screen {
-    max-width: 300px;
-    margin-right: auto;
+@media (max-width: 269px) {
+  .aside_section {
+    display: none;
   }
 }
 </style>

@@ -18,8 +18,13 @@
           studySet.active == 'active' ? 'bg-red-50' : 'bg-blue-50'
         } p-3`"
       >
-        <div class="flex m-2">
-          <span><i class="fa fa-archive fa-3x text-gray-600 mr-2"></i></span>
+        <div class="flex justify-center items-center m-2">
+          <span
+            :class="`fa fa-archive hidden xl:flex fa-3x text-gray-600`"
+          ></span>
+          <span
+            :class="`fa fa-archive flex xl:hidden fa-2x text-gray-600`"
+          ></span>
 
           <div class="flex-1 ml-2 align-center">
             <span class="font-medium text-xs text-gray-700 font-sans">
@@ -30,7 +35,9 @@
               {{ studySet.sub_topic }}
             </span>
 
-            <span class="font-medium text-sm uppercase text-gray-700 font-sans">
+            <span
+              class="font-medium text-xs md:text-sm uppercase text-gray-700 font-sans"
+            >
               - {{ studySet.school }}
             </span>
           </div>
@@ -72,7 +79,7 @@ import User from '@/components/Reusable/User.vue'
 import MultipleCards from '@/components/Reusable/MultipleCards.vue'
 
 export default {
-  name: 'MyStudy',
+  name: 'StudySets',
   components: {
     Ratings,
     ViewAll,

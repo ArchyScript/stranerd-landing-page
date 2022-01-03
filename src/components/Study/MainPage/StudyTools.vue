@@ -81,7 +81,7 @@ import ViewAll from '@/components/Reusable/ViewAll.vue'
 import CardSlider from '@/components/Reusable/CardSlider.vue'
 
 export default {
-  name: 'MyStudy',
+  name: 'StudyTools',
   components: {
     ViewAll,
     CardSlider,

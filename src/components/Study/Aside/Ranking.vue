@@ -81,7 +81,7 @@ export default {
         ranking: 21,
       },
       {
-        name: 'Elon Musk',
+        name: 'Elo n Musk',
         point: 214,
         ranking: 88,
       },

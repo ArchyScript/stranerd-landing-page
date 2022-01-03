@@ -70,6 +70,7 @@
         </div>
 
         <div class="flex items-center justify-between m-1">
+          <!-- <Cards :value="54" /> -->
           <Cards :value="flashcard.card.value" />
 
           <User :name="flashcard.user.name" />
@@ -124,7 +125,7 @@ export default {
         title: 'Waves and Sound (100l 1st semester exam)',
         user: { name: 'Daniel' },
         card: {
-          value: 50,
+          value: 25,
         },
         coin: {
           is_available: false,
